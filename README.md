@@ -101,14 +101,28 @@ Protect sensitive healthcare data with TLS-encrypted communication:
 python scripts/generate_certificates.py --type self-signed  # Development
 python scripts/generate_certificates.py --type csr --domain yourdomain.com  # Production
 
-# Run TLS-enabled servers
+# Start ALL TLS-enabled servers at once
+python scripts/start_tls_servers.py
+
+# Or run individual TLS servers
 export TLS_CERT_FILE=certs/server.crt
 export TLS_KEY_FILE=certs/server.key
-python src/servers/icd10_server_tls.py  # Port 8911 (TLS)
+python src/servers/icd10_server_tls.py   # Port 8911 (ICD-10 TLS)
+python src/servers/snomed_server_tls.py  # Port 8912 (SNOMED TLS)
+python src/servers/loinc_server_tls.py   # Port 8913 (LOINC TLS)
+python src/servers/rxnorm_server_tls.py  # Port 8914 (RxNorm TLS)
+python src/servers/hcpcs_server_tls.py   # Port 8915 (HCPCS TLS)
 
 # Connect with TLS client
 python examples/tls_client_example.py
 ```
+
+**TLS Server Ports:**
+- ICD-10 TLS: 8911 (standard: 8901)
+- SNOMED TLS: 8912 (standard: 8902)
+- LOINC TLS: 8913 (standard: 8903)
+- RxNorm TLS: 8914 (standard: 8904)
+- HCPCS TLS: 8915 (standard: 8905)
 
 **Security Notes:**
 - All TLS servers use TLS 1.2+ with strong ciphers
