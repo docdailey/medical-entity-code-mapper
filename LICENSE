@@ -1,27 +1,39 @@
-MIT License with Commercial Restriction
+Modified MIT License - Non-Commercial Use Only
 
 Copyright (c) 2024 William Dailey, MD, MSEng, MSMI
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+of this software and associated documentation files (the "Software"), to use,
+copy, modify, and distribute the Software for NON-COMMERCIAL PURPOSES ONLY,
+subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+1. The above copyright notice and this permission notice shall be included in all
+   copies or substantial portions of the Software.
 
-COMMERCIAL RESTRICTION: The Software may be used for any commercial purpose
-EXCEPT for the resale of the Software itself as a standalone product or service.
-This restriction does not apply to:
-- Using the Software within commercial healthcare systems
-- Incorporating the Software into larger applications
-- Providing services that add substantial value beyond the Software itself
-- Internal commercial use within organizations
-
-For licensing inquiries regarding resale or redistribution as a commercial
-product, please contact: docdailey@gmail.com
+2. COMMERCIAL USE PROHIBITION: 
+   The Software may NOT be used for any commercial purpose without obtaining 
+   a commercial license from the copyright holder. Commercial use includes but 
+   is not limited to:
+   
+   - Incorporating the Software into any product or service offered for sale
+   - Using the Software to provide paid services to third parties
+   - Including the Software in any commercial software package or distribution
+   - Using the Software in any revenue-generating activity
+   - Reselling, sublicensing, or redistributing the Software for profit
+   
+3. PERMITTED NON-COMMERCIAL USES:
+   The following uses are explicitly permitted without a commercial license:
+   - Personal use
+   - Academic research and education
+   - Non-profit organizations for charitable purposes
+   - Evaluation and testing for potential commercial licensing
+   
+4. COMMERCIAL LICENSING:
+   To obtain a license for commercial use, contact: docdailey@gmail.com
+   
+5. ATTRIBUTION:
+   Any use of the Software must include clear attribution to the original author
+   and a link to the original repository.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -30,3 +42,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+For questions about commercial licensing or permitted uses, please contact:
+docdailey@gmail.com

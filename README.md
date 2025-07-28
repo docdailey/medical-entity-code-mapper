@@ -318,16 +318,19 @@ The project uses `pyproject.toml` for dependency management. UV automatically:
 
 ## 📄 License
 
-This project is licensed under the MIT License with the following additional terms:
+This project is licensed under a Modified MIT License - **Non-Commercial Use Only**.
 
-**Free for non-commercial use.** Commercial use is permitted except for resale of the software itself. If you wish to incorporate this software into a product for sale, please contact for licensing terms.
+**Commercial use is prohibited without a license.** Any use in commercial products, services, or revenue-generating activities requires a commercial license.
 
 Key points:
-- ✅ Free for research, education, and internal business use
-- ✅ Can be used in commercial healthcare systems
-- ✅ Can be modified and redistributed
-- ❌ Cannot be repackaged and sold as a standalone product
-- ❌ Cannot be sold as a service without adding substantial value
+- ✅ Free for personal use, academic research, and education
+- ✅ Free for non-profit organizations
+- ✅ Free for evaluation and testing
+- ❌ Cannot be used in any commercial product or service without a license
+- ❌ Cannot be used for any revenue-generating activity without a license
+- ❌ Cannot be redistributed or resold without a license
+
+For commercial licensing inquiries, contact: docdailey@gmail.com
 
 ## 🤝 Contributing
 
