@@ -24,7 +24,7 @@ def query_server(host, port, query, seq_num=1):
         success = 'ERROR' not in response and 'TIMEOUT' not in response
         
         return {'latency': latency, 'success': success}
-    except:
+    except Exception:
         return {'latency': 5000, 'success': False}
 
 def benchmark_server_solo(name, port, queries, num_requests=500, threads=50):
@@ -105,7 +105,7 @@ def main():
             sock.close()
             if result == 0:
                 running_servers.append((name, port, queries))
-        except:
+        except Exception:
             pass
     
     if not running_servers:

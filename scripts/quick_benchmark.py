@@ -24,7 +24,7 @@ def query_server(host, port, query, seq_num=1):
         success = 'ERROR' not in response and 'TIMEOUT' not in response
         
         return {'latency': latency, 'success': success}
-    except:
+    except Exception:
         return {'latency': 5000, 'success': False}
 
 def benchmark_server(name, port, queries, num_requests=100, threads=10):

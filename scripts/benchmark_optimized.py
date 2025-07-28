@@ -202,7 +202,7 @@ def main():
                 print(f"✓ {name} server detected on port {config['port']}")
             else:
                 print(f"✗ {name} server not running on port {config['port']}")
-        except:
+        except Exception:
             print(f"✗ {name} server not running on port {config['port']}")
     
     if not running_servers:

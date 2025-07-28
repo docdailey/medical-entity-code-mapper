@@ -51,7 +51,7 @@ class ImprovedMedicalEntityCodeMapper:
             )
             self.use_bio_ner = True
             print("Loaded biomedical NER for enhanced medication detection")
-        except:
+        except Exception:
             self.bio_ner = None
             self.use_bio_ner = False
             print("Biomedical NER not available, using clinical NER only")

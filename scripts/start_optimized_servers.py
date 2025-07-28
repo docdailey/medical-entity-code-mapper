@@ -26,7 +26,7 @@ def check_port(port):
         result = sock.connect_ex(('localhost', port))
         sock.close()
         return result == 0
-    except:
+    except Exception:
         return False
 
 def kill_existing_servers():
