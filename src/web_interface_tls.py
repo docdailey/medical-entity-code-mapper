@@ -9,11 +9,19 @@ import ssl
 import os
 from pathlib import Path
 from medical_entity_mapper_tls import TLSMedicalEntityCodeMapper
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from utils.input_validator import get_input_validator
+from utils.audit_logger import get_audit_logger
 
 app = Flask(__name__)
 
 # Initialize TLS entity mapper
 mapper = TLSMedicalEntityCodeMapper(verify_cert=False)
+
+# Initialize validators and loggers
+validator = get_input_validator()
+audit_logger = get_audit_logger()
 
 # HTML template for the web interface
 HTML_TEMPLATE = """
@@ -261,20 +269,72 @@ def index():
 @app.route('/api/extract', methods=['POST'])
 def extract_entities():
     """API endpoint for entity extraction"""
+    client_ip = request.remote_addr
+    
     try:
+        # Log API access
+        audit_logger.log_access(
+            user_id=None,
+            resource="web_api",
+            action="EXTRACT_ENTITIES",
+            result="ATTEMPT",
+            client_ip=client_ip
+        )
+        
         data = request.get_json()
         text = data.get('text', '')
         
         if not text:
+            audit_logger.log_access(
+                user_id=None,
+                resource="web_api",
+                action="EXTRACT_ENTITIES",
+                result="FAILED",
+                client_ip=client_ip
+            )
             return jsonify({'error': 'No text provided'}), 400
         
-        # Process text using TLS entity mapper
-        result = mapper.process_text(text)
+        # Validate and sanitize input
+        sanitized_text = validator.sanitize_query(text)
+        if not sanitized_text:
+            # Log potential security event
+            audit_logger.log_security_event(
+                event_type="MALICIOUS_INPUT_BLOCKED",
+                severity="WARNING",
+                details={"input_length": len(text), "endpoint": "/api/extract"},
+                client_ip=client_ip
+            )
+            return jsonify({'error': 'Invalid input detected'}), 400
         
-        return jsonify(result)
+        # Process text using TLS entity mapper
+        result = mapper.process_text(sanitized_text)
+        
+        # Sanitize response
+        sanitized_result = validator.sanitize_json_response({
+            'entities': result,
+            'status': 'success'
+        })
+        
+        # Log successful extraction
+        audit_logger.log_query(
+            query_type="WEB_API",
+            query_text=sanitized_text[:100],  # Log only first 100 chars
+            server="web_interface",
+            response_code="SUCCESS",
+            latency_ms=0,  # Could add timing if needed
+            client_ip=client_ip
+        )
+        
+        return jsonify(sanitized_result)
     
     except Exception as e:
-        return jsonify({'error': str(e)}), 500
+        # Log error
+        audit_logger.log_error(
+            error_type="API_ERROR",
+            error_message=str(e),
+            context={"endpoint": "/api/extract", "client_ip": client_ip}
+        )
+        return jsonify({'error': 'Internal server error'}), 500
 
 def create_ssl_context():
     """Create SSL context for HTTPS"""
