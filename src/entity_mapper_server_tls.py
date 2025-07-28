@@ -22,7 +22,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.input_validator import get_input_validator
 
 # Configuration
-HOST = '0.0.0.0'
+HOST = '127.0.0.1'  # Loopback only for security
 PORT = 8920  # TLS port for entity mapper
 NUM_CLIENT_THREADS = 50
 

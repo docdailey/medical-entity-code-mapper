@@ -27,7 +27,7 @@ logging.basicConfig(
 )
 
 class SNOMEDFAISSServer:
-    def __init__(self, host='0.0.0.0', port=8902):
+    def __init__(self, host='127.0.0.1', port=8902):  # Loopback only for security
         self.host = host
         self.port = port
         self.running = False

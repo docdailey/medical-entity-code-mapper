@@ -143,7 +143,7 @@ class DynamicBatcher:
 class BaseDynamicMedicalServer(ABC):
     """Base class for dynamic batching medical coding servers"""
     
-    def __init__(self, host='0.0.0.0', port=8901, server_name="Medical"):
+    def __init__(self, host='127.0.0.1', port=8901, server_name="Medical"):  # Loopback only for security
         self.host = host
         self.port = port
         self.server_name = server_name

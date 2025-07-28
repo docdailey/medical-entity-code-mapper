@@ -33,7 +33,7 @@ TLS_CERT_FILE = os.getenv('TLS_CERT_FILE', 'certs/server.crt')
 TLS_KEY_FILE = os.getenv('TLS_KEY_FILE', 'certs/server.key')
 
 class HCPCSFAISSTLSServer:
-    def __init__(self, host='0.0.0.0', port=8915):
+    def __init__(self, host='127.0.0.1', port=8915):  # Loopback only for security
         self.host = host
         self.port = port
         self.running = False

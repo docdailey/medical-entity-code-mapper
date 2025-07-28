@@ -23,7 +23,7 @@ from dataclasses import dataclass
 from collections import defaultdict, deque
 
 # Configuration
-HOST = '0.0.0.0'
+HOST = '127.0.0.1'  # Loopback only for security
 PORT = 8901
 NUM_CLIENT_THREADS = 50
 

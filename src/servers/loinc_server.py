@@ -22,7 +22,7 @@ import sys
 import gc
 
 class LOINCFAISSServer:
-    def __init__(self, host='0.0.0.0', port=8903):
+    def __init__(self, host='127.0.0.1', port=8903):  # Loopback only for security
         self.host = host
         self.port = port
         # Get project root directory

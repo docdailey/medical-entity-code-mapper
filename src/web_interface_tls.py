@@ -373,7 +373,7 @@ def main():
     
     # Run with HTTPS
     app.run(
-        host='0.0.0.0',
+        host='127.0.0.1',  # Loopback only for security
         port=5443,
         ssl_context=ssl_context,
         debug=False
