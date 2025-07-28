@@ -193,20 +193,29 @@ pkill -f 'python.*server'
 # Run the medical entity mapper directly
 uv run python src/mappers/medical_entity_mapper.py
 
-# Or use in your Python code
-uv run python your_script.py
+# Or use the TLS-secured version
+uv run python src/mappers/medical_entity_mapper_tls.py
+
+# Run HTTPS web interface (TLS-secured)
+python src/web_interface_tls.py
+# Access at: https://localhost:5443
 ```
 
 ```python
-from src.mappers.medical_entity_mapper import process_clinical_text
+# Standard usage
+from src.mappers.medical_entity_mapper import ImprovedMedicalEntityCodeMapper
 
-# Process clinical text
+# TLS-secured usage (connects to TLS servers)
+from src.mappers.medical_entity_mapper_tls import TLSMedicalEntityCodeMapper
+
+# Process clinical text with TLS
+mapper = TLSMedicalEntityCodeMapper(verify_cert=False)  # Development
 text = "Patient with hypertension prescribed lisinopril. CBC shows elevated WBC."
-entities = process_clinical_text(text)
+result = mapper.process_text(text)
 
 # Results include entity extraction and code mapping
-for entity in entities:
-    print(f"{entity['entity_name']} ({entity['category']}) -> {entity['codes']}")
+for entity in result['entities']:
+    print(f"{entity['entity']} ({entity['category']}) -> {entity['codes']}")
 ```
 
 ### TCP Socket Protocol
