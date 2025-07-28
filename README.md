@@ -1,5 +1,13 @@
 # Medical Entity Code Mapper
 
+[![License: Custom](https://img.shields.io/badge/License-Custom-yellow.svg)](https://github.com/docdailey/medical-entity-code-mapper/blob/main/LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+![GitHub stars](https://img.shields.io/github/stars/docdailey/medical-entity-code-mapper)
+![GitHub forks](https://img.shields.io/github/forks/docdailey/medical-entity-code-mapper)
+![GitHub issues](https://img.shields.io/github/issues/docdailey/medical-entity-code-mapper)
+![GitHub last commit](https://img.shields.io/github/last-commit/docdailey/medical-entity-code-mapper)
+![Visitors](https://visitor-badge.laobi.icu/badge?page_id=docdailey.medical-entity-code-mapper)
+
 A high-performance medical entity extraction and coding system that identifies clinical entities in text and maps them to standard medical ontologies (ICD-10, SNOMED CT, LOINC, RxNorm).
 
 ## 💻 System Requirements
