@@ -325,10 +325,13 @@ This project is licensed under a Modified MIT License - **Non-Commercial Use Onl
 Key points:
 - ✅ Free for personal use, academic research, and education
 - ✅ Free for non-profit organizations
-- ✅ Free for evaluation and testing
-- ❌ Cannot be used in any commercial product or service without a license
-- ❌ Cannot be used for any revenue-generating activity without a license
-- ❌ Cannot be redistributed or resold without a license
+- ✅ Free for healthcare organizations providing direct patient care
+- ✅ Free for government agencies and public health departments
+- ✅ Free for clinical research and trials
+- ✅ Free for medical education and quality improvement
+- ❌ Cannot be sold as a commercial product or service without a license
+- ❌ Cannot be included in commercial software packages without a license
+- ❌ Cannot be used to provide paid services to third parties without a license
 
 For commercial licensing inquiries, contact: docdailey@gmail.com
 
