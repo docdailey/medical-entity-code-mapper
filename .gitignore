@@ -1,0 +1,105 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# Environments
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+
+# Benchmark results
+benchmark_*.json
+benchmark_results/
+
+# Model files (downloaded automatically)
+data/models/
+models/
+
+# FAISS indices (downloaded automatically from Hugging Face)
+data/indices/
+indices/
+
+# Cache
+data/cache/
+*.cache
+
+# Test outputs
+test_outputs/
+*.test.json
+improved_mapper_test_results.json
+
+# macOS
+.DS_Store
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# Test coverage
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Documentation builds
+docs/_build/
+
+# Large data files
+*.pkl.gz
+*.tar.gz
+*.zip
+
+# Exclude example env but keep example
+.env
+!.env.example
