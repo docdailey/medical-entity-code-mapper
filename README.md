@@ -27,6 +27,7 @@ This system addresses the critical need for automated medical coding by:
 - Mapping entities to multiple medical coding systems simultaneously
 - Providing context-aware code selection (e.g., adult vs pediatric codes)
 - Offering high-performance TCP socket servers for production deployment
+- **NEW**: TLS encryption for secure handling of sensitive healthcare data
 
 ## 🚀 Features
 
@@ -89,6 +90,32 @@ Supported device categories:
 - Surgical supplies (syringes, needles, dressings, sutures)
 - DME (hospital beds, lifts, commodes)
 - Prosthetics and orthotics
+
+## 🔒 Security Features
+
+### TLS Encryption (NEW)
+Protect sensitive healthcare data with TLS-encrypted communication:
+
+```bash
+# Generate certificates
+python scripts/generate_certificates.py --type self-signed  # Development
+python scripts/generate_certificates.py --type csr --domain yourdomain.com  # Production
+
+# Run TLS-enabled servers
+export TLS_CERT_FILE=certs/server.crt
+export TLS_KEY_FILE=certs/server.key
+python src/servers/icd10_server_tls.py  # Port 8911 (TLS)
+
+# Connect with TLS client
+python examples/tls_client_example.py
+```
+
+**Security Notes:**
+- All TLS servers use TLS 1.2+ with strong ciphers
+- Self-signed certificates for development only
+- Production requires proper CA-signed certificates
+- Optional mutual TLS for client authentication
+- Never commit certificates or keys to git
 
 ## 🔧 Quick Start
 

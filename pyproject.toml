@@ -6,14 +6,14 @@ authors = [{name = "William Dailey, MD, MSEng, MSMI", email = "docdailey@gmail.c
 requires-python = ">=3.13,<3.14"
 dependencies = [
     "torch==2.7.1",
-    "transformers>=4.30.0",
-    "sentence-transformers>=2.2.2",
-    "faiss-cpu>=1.7.4",
-    "numpy>=1.24.0",
-    "scikit-learn>=1.3.0",
-    "pandas>=2.0.0",
-    "tqdm>=4.65.0",
-    "python-dotenv>=1.0.0",
+    "transformers==4.36.2",
+    "sentence-transformers==2.2.2",
+    "faiss-cpu==1.7.4",
+    "numpy==1.24.3",
+    "scikit-learn==1.3.2",
+    "pandas==2.0.3",
+    "tqdm==4.66.1",
+    "python-dotenv==1.0.0",
 ]
 
 [project.scripts]

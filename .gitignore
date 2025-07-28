@@ -75,6 +75,15 @@ improved_mapper_test_results.json
 # macOS
 .DS_Store
 
+# Certificates and keys (NEVER commit these!)
+certs/
+*.key
+*.crt
+*.csr
+*.pem
+*.p12
+*.pfx
+
 # Temporary files
 *.tmp
 *.bak
